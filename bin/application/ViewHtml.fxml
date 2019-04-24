@@ -7,96 +7,119 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<Pane id="page" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="716.0" prefWidth="1125.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Controller">
-   <children>
-      <SplitPane dividerPositions="0.08637577916295637, 0.7756010685663401" layoutY="31.0" prefHeight="679.0" prefWidth="1125.0">
-        <items>
-          <AnchorPane maxWidth="1.7976931348623157E308" minWidth="0.0" prefHeight="677.0" prefWidth="50.0">
-               <children>
-                  <Label layoutX="31.0" layoutY="14.0" text="Tools" />
-                  <GridPane hgap="5.0" layoutX="19.0" layoutY="44.0" prefHeight="283.0" prefWidth="61.0" vgap="5.0" AnchorPane.leftAnchor="19.0">
-                    <columnConstraints>
-                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                    </columnConstraints>
-                    <rowConstraints>
-                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                    </rowConstraints>
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="778.0" prefWidth="1221.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Controller">
+         <children>
+            <SplitPane fx:id="splitPane1" dividerPositions="0.08637577916295637, 0.7756010685663401" layoutY="31.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="667.0" prefWidth="1125.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="31.0">
+              <items>
+                <AnchorPane maxWidth="-Infinity" minWidth="0.0" prefHeight="726.0" prefWidth="122.0">
                      <children>
-                        <Button fx:id="paintTool" mnemonicParsing="false" onAction="#changeTool" prefHeight="55.0" prefWidth="61.0" GridPane.halignment="CENTER" />
-                        <Button fx:id="eraserTool" mnemonicParsing="false" onAction="#changeTool" prefHeight="47.0" prefWidth="84.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                        <Label layoutX="31.0" layoutY="14.0" text="Tools" AnchorPane.leftAnchor="31.0" AnchorPane.rightAnchor="26.0" AnchorPane.topAnchor="14.0" />
+                        <GridPane hgap="5.0" layoutX="19.0" layoutY="44.0" prefHeight="283.0" prefWidth="61.0" vgap="5.0" AnchorPane.leftAnchor="19.0" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="44.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Button fx:id="paintTool" mnemonicParsing="false" onAction="#changeTool" prefHeight="47.0" prefWidth="84.0" />
+                              <Button fx:id="eraserTool" mnemonicParsing="false" onAction="#changeTool" prefHeight="47.0" prefWidth="84.0" GridPane.rowIndex="1" />
+                              <Button fx:id="eyedropTool" layoutX="10.0" layoutY="58.0" mnemonicParsing="false" onAction="#changeTool" prefHeight="47.0" prefWidth="84.0" GridPane.rowIndex="2" />
+                              <Button fx:id="undoTool" layoutX="10.0" layoutY="106.0" mnemonicParsing="false" onAction="#undoAction" prefHeight="47.0" prefWidth="84.0" GridPane.rowIndex="3" />
+                           </children>
+                        </GridPane>
                      </children>
+                  </AnchorPane>
+                <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="665.0" prefWidth="515.0">
+                     <children>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                              <ImageView fx:id="backgroundImage" fitHeight="679.0" fitWidth="766.0" pickOnBounds="true" style="-fx-alignment: CENTER;" />
+                     </children>
+                  </HBox>
+                        <GridPane fx:id="pixelBoard" alignment="CENTER" gridLinesVisible="true" layoutX="-2.0" layoutY="1.0" prefHeight="677.0" prefWidth="766.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <columnConstraints>
+                        <ColumnConstraints />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints />
+                     </rowConstraints>
                   </GridPane>
-               </children>
-            </AnchorPane>
-          <AnchorPane maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="-Infinity" prefHeight="665.0" prefWidth="515.0">
-               <children>
-                  <ImageView fx:id="backgroundImage" fitHeight="679.0" fitWidth="766.0" pickOnBounds="true" />
-                  <GridPane fx:id="pixelBoard" gridLinesVisible="true" layoutX="-2.0" layoutY="1.0" prefHeight="677.0" prefWidth="766.0">
-                  </GridPane>
-               </children></AnchorPane>
-            <AnchorPane prefHeight="665.0" prefWidth="48.0">
-               <children>
-                  <SplitPane dividerPositions="0.277037037037037, 0.43703703703703706" orientation="VERTICAL" prefHeight="677.0" prefWidth="248.0">
-                    <items>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="509.0" prefWidth="169.0">
-                           <children>
-                              <Label layoutX="102.0" layoutY="21.0" text="Image" />
-                              <Slider fx:id="imageOpacity" layoutX="47.0" layoutY="74.0" max="1.0" prefHeight="18.0" prefWidth="153.0" value="1.0" />
-                              <Label layoutX="34.0" layoutY="56.0" scaleX="0.7" scaleY="0.7" text="Opacity" />
-                              <Button id="imageSelector" layoutX="77.0" layoutY="117.0" mnemonicParsing="false" onAction="#openFileExplorer" prefHeight="31.0" prefWidth="92.0" text="Change..." />
-                           </children>
-                        </AnchorPane>
-                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
-                           <children>
-                              <Label layoutX="40.0" layoutY="43.0" text="Opacity">
-                                 <font>
-                                    <Font size="11.0" />
-                                 </font>
-                              </Label>
-                              <Slider fx:id="drawingOpacity" layoutX="47.0" layoutY="63.0" max="1.0" prefHeight="18.0" prefWidth="153.0" value="1.0" />
-                              <Label layoutX="95.0" layoutY="11.0" text="Drawing" />
-                           </children>
-                        </AnchorPane>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="351.0" prefWidth="176.0">
-                           <children>
-                              <Label layoutX="29.0" layoutY="15.0" text="Pallette" />
-                              <ColorPicker fx:id="colorPicker" layoutX="110.0" layoutY="15.0" prefHeight="21.0" prefWidth="50.0" />
-                              <Pane fx:id="secondaryColor" layoutX="99.0" layoutY="125.0" onMouseClicked="#setSecondaryColor" prefHeight="94.0" prefWidth="102.0" style="-fx-border-color: black; -fx-border-width: 3; -fx-background-color: black;" />
-                              <Pane fx:id="primaryColor" layoutX="48.0" layoutY="94.0" onMouseClicked="#setPrimaryColor" prefHeight="94.0" prefWidth="102.0" style="-fx-border-color: black; -fx-border-width: 3; -fx-background-color: white;" />
-                           </children>
-                        </AnchorPane>
-                    </items>
-                  </SplitPane>
-               </children>
-            </AnchorPane>
-        </items>
-      </SplitPane>
-      <MenuBar layoutY="1.0" prefHeight="32.0" prefWidth="1125.0">
-        <menus>
-          <Menu mnemonicParsing="false" text="File">
-            <items>
-                  <MenuItem id="menuNewDrawing" mnemonicParsing="false" text="New..." />
-              <MenuItem id="menuSaveDrawing" mnemonicParsing="false" text="Save" onAction="#saveDrawing" />
-                  <MenuItem id="menuSaveAsDrawing" mnemonicParsing="false" text="Save As..." />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="View">
-            <items>
-              <MenuItem fx:id="playMenuItem" mnemonicParsing="false" text="Play" />
-                  <MenuItem id="menuClear" mnemonicParsing="false" text="Clear..." />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Help">
-            <items>
-              <MenuItem id="menuAbout" mnemonicParsing="false" text="About" />
-            </items>
-          </Menu>
-        </menus>
-      </MenuBar>
-   </children>
-</Pane>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane maxWidth="-Infinity" minWidth="0.0" prefHeight="665.0" prefWidth="500.0">
+                     <children>
+                        <SplitPane dividerPositions="0.277037037037037, 0.554074074074074" orientation="VERTICAL" prefHeight="677.0" prefWidth="248.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <items>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="509.0" prefWidth="169.0">
+                                 <children>
+                                    <Label layoutX="61.0" layoutY="22.0" text="Background Image" />
+                                    <Slider fx:id="imageOpacity" layoutX="47.0" layoutY="74.0" max="1.0" prefHeight="18.0" prefWidth="153.0" value="1.0" />
+                                    <Label layoutX="34.0" layoutY="56.0" scaleX="0.7" scaleY="0.7" text="Opacity" />
+                                    <Button id="imageSelector" layoutX="77.0" layoutY="117.0" mnemonicParsing="false" onAction="#openFileExplorer" prefHeight="31.0" prefWidth="92.0" text="Change..." />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                 <children>
+                                    <Label layoutX="40.0" layoutY="43.0" text="Opacity">
+                                       <font>
+                                          <Font size="11.0" />
+                                       </font>
+                                    </Label>
+                                    <Slider fx:id="drawingOpacity" layoutX="47.0" layoutY="63.0" max="1.0" prefHeight="18.0" prefWidth="153.0" value="1.0" />
+                                    <Label layoutX="95.0" layoutY="11.0" text="Drawing" />
+                                    <CheckBox fx:id="showGrid" layoutX="179.0" layoutY="92.0" mnemonicParsing="false" onAction="#toggleGridLines" prefHeight="21.0" prefWidth="25.0" selected="true" />
+                                    <Label layoutX="44.0" layoutY="92.0" text="Show Grid" />
+                                    <Button id="clearDrawing" layoutX="77.0" layoutY="134.0" mnemonicParsing="false" onAction="#clearDrawing" prefHeight="31.0" prefWidth="92.0" text="Clear All" />
+                                 </children>
+                              </AnchorPane>
+                            <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="360.0" prefWidth="246.0">
+                                 <children>
+                                    <Label layoutX="29.0" layoutY="15.0" text="Pallette" />
+                                    <ColorPicker fx:id="colorPicker" layoutX="110.0" layoutY="15.0" prefHeight="21.0" prefWidth="50.0" />
+                                    <Pane fx:id="secondaryColor" layoutX="99.0" layoutY="125.0" onMouseClicked="#setSecondaryColor" prefHeight="94.0" prefWidth="102.0" style="-fx-border-color: black; -fx-border-width: 3; -fx-background-color: black;" />
+                                    <Pane fx:id="primaryColor" layoutX="48.0" layoutY="94.0" onMouseClicked="#setPrimaryColor" prefHeight="94.0" prefWidth="102.0" style="-fx-border-color: black; -fx-border-width: 3; -fx-background-color: white;" />
+                                 </children>
+                              </AnchorPane>
+                          </items>
+                        </SplitPane>
+                     </children>
+                  </AnchorPane>
+              </items>
+            </SplitPane>
+            <MenuBar prefHeight="32.0" prefWidth="1125.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                    <MenuItem id="menuSaveDrawing" mnemonicParsing="false" onAction="#saveDrawing" text="Save" />
+                        <MenuItem id="menuSaveAsDrawing" mnemonicParsing="false" onAction="#saveAsDrawing" text="Save As..." />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="View">
+                  <items>
+                    <MenuItem fx:id="playMenuItem" mnemonicParsing="false" onAction="#playStopAnimation" text="Play">
+                     <graphic>
+                        <ImageView fx:id="playImage" fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true" />
+                     </graphic></MenuItem>
+                  <MenuItem fx:id="stopMenuItem" mnemonicParsing="false" onAction="#playStopAnimation" text="Stop">
+                     <graphic>
+                        <ImageView fx:id="stopImage" fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true" />
+                     </graphic>
+                  </MenuItem>
+                        <MenuItem id="menuClear" mnemonicParsing="false" onAction="#clearDrawing" text="Clear..." />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                  <items>
+                    <MenuItem id="menuAbout" mnemonicParsing="false" text="About" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+         </children>
+      </AnchorPane>
