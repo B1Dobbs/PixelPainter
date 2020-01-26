@@ -1,6 +1,6 @@
 # Pixel Painter
 
-### Small application build with JavaFX to create pixel art
+### Small application built with JavaFX to create pixel art
 
 #### To Run
 
